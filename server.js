@@ -41,7 +41,7 @@ app.get('/bookmark', (req, res) => {
 	} else {
 		let bkmark = listOfBookmarks.filter( bkmark => bkmark.title == title);
 
-		if(!bkmark) {
+		if(bkmark.length == 0) {
 			res.statusMessage = `There is no result with title=${title}`;
 			res.status(404).end();
 		} else {
